@@ -1,0 +1,1 @@
+make sure points are well initialized to 0
