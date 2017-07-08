@@ -8,30 +8,34 @@ struct Point
 {
     Type data[Dimension];
 
-    template<typename ... X> Point(X ... t)
+    template<typename ... X>
+    Point(X ... t)
     : data{ Type(t)... }
     {}
 
     Point(){}
 
-    template<int I> Type& at()
+    template<int I>
+    Type& at()
     {
         static_assert(Dimension > I,"Error: Point::at() out of range.");
         return data[I];
     }
 
-    template<int I> Type const& at() const
+    template<int I>
+    const Type& at() const
     {
-        static_assert(Dimension > I,"Error: Point::at() out of range."); return data[I];
+        static_assert(Dimension > I,"Error: Point::at() out of range.");
+        return data[I];
     }
 
-    Type & x() { return at<0>(); }
-    Type & y() { return at<1>(); }
-    Type & z() { return at<2>(); }
+    Type& x() { return at<0>(); }
+    Type& y() { return at<1>(); }
+    Type& z() { return at<2>(); }
 
-    Type const & x() const { return at<0>(); }
-    Type const & y() const { return at<1>(); }
-    Type const & z() const { return at<2>(); }
+    const Type& x() const { return at<0>(); }
+    const Type& y() const { return at<1>(); }
+    const Type& z() const { return at<2>(); }
 
     Type norm() const
     {
