@@ -3,10 +3,13 @@
 #include <iostream>
 #include <vector>
 
+#include <eigen3/Eigen/Dense>
+
 template<typename Type, int Dimension>
 struct Point
 {
-    Type data[Dimension];
+    // Type data[Dimension];
+    Eigen::Matrix<double,Dimension,1> data;
 
     template<typename ... X>
     Point(X ... t)
