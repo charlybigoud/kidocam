@@ -9,4 +9,3 @@ bool Kidoca::raytrace(const P2D& pixel, Ray3D& ray) const
 {
     return true;
 }
-
