@@ -13,7 +13,7 @@ struct Point
     : data{ Type(t)... }
     {}
 
-    Point(){}
+    ~Point(){}
 
     template<int I>
     Type& at()
