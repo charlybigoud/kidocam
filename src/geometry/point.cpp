@@ -1,15 +1,15 @@
 #include "point.hpp"
 
-std::ostream& operator<<(std::ostream& o, const P2D& p)
+std::ostream& operator<<(std::ostream& os, const P2D& p)
 {
-    o << "{" << p.x() << ", " << p.y() << "}";
+    os << "{" << p.x() << ", " << p.y() << "}";
 
-    return o;
+    return os;
 }
 
-std::ostream& operator<<(std::ostream& o, const P3D& p)
+std::ostream& operator<<(std::ostream& os, const P3D& p)
 {
-    o << "{" << p.x() << ", " << p.y() << ", " << p.z() << "}";
+    os << "{" << p.x() << ", " << p.y() << ", " << p.z() << "}";
 
-    return o;
+    return os;
 }

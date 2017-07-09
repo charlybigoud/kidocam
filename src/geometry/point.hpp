@@ -58,5 +58,5 @@ using P3D = Eigen::Matrix<double, 3, 1>;
 using P2DS = AlignedVector<P2D>;
 using P3DS = AlignedVector<P3D>;
 
-std::ostream& operator<<(std::ostream& o, const P2D& p);
-std::ostream& operator<<(std::ostream& o, const P3D& p);
+std::ostream& operator<<(std::ostream& os, const P2D& p);
+std::ostream& operator<<(std::ostream& os, const P3D& p);

@@ -26,10 +26,10 @@ using Poses2D = AlignedVector<Pose2D>;
 using Poses3D = AlignedVector<Pose3D>;
 
 template<typename Type, int Dimension>
-std::ostream& operator<<(std::ostream& o, const Pose<Type,Dimension>& p)
+std::ostream& operator<<(std::ostream& os, const Pose<Type,Dimension>& p)
 {
-    o << "rotation:\n" << p.rotation.transpose() << "\n";
-    o << "translation: " << p.translation.transpose();
+    os << "rotation:\n" << p.rotation.transpose() << "\n";
+    os << "translation: " << p.translation.transpose();
 
-    return o;
+    return os;
 }

@@ -26,12 +26,12 @@
 // using Rays3D = std::vector<Ray3D>;
 
 // template<typename Type, int Dimension>
-// std::ostream& operator<<(std::ostream& o, const Ray<Type,Dimension>& r)
+// std::ostream& operator<<(std::ostream& os, const Ray<Type,Dimension>& r)
 // {
-//     o << "origin: " << r.origin << "\n";
-//     o << "direction: " << r.direction;
+//     os << "origin: " << r.origin << "\n";
+//     os << "direction: " << r.direction;
 
-//     return o;
+//     return os;
 // }
 
 
@@ -57,10 +57,10 @@ using Rays2D = AlignedVector<Ray2D>;
 using Rays3D = AlignedVector<Ray3D>;
 
 template<typename Type, int Dimension>
-std::ostream& operator<<(std::ostream& o, const Ray<Type,Dimension>& r)
+std::ostream& operator<<(std::ostream& os, const Ray<Type,Dimension>& r)
 {
-    o << "origin: " << r.origin << "\n";
-    o << "direction: " << r.direction;
+    os << "origin: " << r.origin << "\n";
+    os << "direction: " << r.direction;
 
-    return o;
+    return os;
 }
