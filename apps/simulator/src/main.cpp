@@ -2,6 +2,7 @@
 
 #include <geometry/mesh.hpp>
 #include <geometry/pose.hpp>
+#include <models/thin_lens.hpp>
 #include <models/kidoca.hpp>
 
 int main()
@@ -32,6 +33,17 @@ int main()
 
     PolygonMesh3D mesh3d;
     std::cout << "mesh3d:\n" << mesh3d << std::endl;
+
+    ThinLensModel tlm(10.,4.);
+    std::cout << "tlm:\n" << tlm << std::endl;
+
+    p3d = {20.0,20.0,20.0};
+    tlm.project(p3d, p3d);
+    std::cout << "p3d:\n" << p3d << std::endl;
+
+    p2d = {2000.0,54118814.0};
+    tlm.project(p2d, p2d);
+    std::cout << "p2d:\n" << p2d << std::endl;
 
     return 0;
 }
