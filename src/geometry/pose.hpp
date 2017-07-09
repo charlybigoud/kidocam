@@ -1,19 +1,33 @@
 #pragma once
 
-#include <geometry/point.hpp>
+#include <eigen3/Eigen/Dense>
+
+#include <utils/types.hpp>
 
 template<typename Type, int Dimension>
 struct Pose
 {
-    // Point<Type,Dimension> translation;
-    // // Matrix<Type,Dimension> rotation[Dimension][Dimension];
+    Eigen::Matrix<Type,Dimension,Dimension> rotation;
+    Eigen::Matrix<Type,Dimension,1> translation;
 
-    // Ray(const Point<Type,Dimension>& o = Point<Type,Dimension>()
-    //   , const Point<Type,Dimension>& d = Point<Type,Dimension>()
-    // )
-    // : origin(o), direction(d)
-    // {}
+    Pose(const Eigen::Matrix<Type,Dimension,Dimension>& r = Eigen::Matrix<Type,Dimension,Dimension>::Identity()
+      , const Eigen::Matrix<Type,Dimension,1>& t = Eigen::Matrix<Type,Dimension,1>::Zero()
+    )
+    : rotation(r), translation(t)
+    {}
 };
 
 using Pose2D = Pose<double,2>;
 using Pose3D = Pose<double,3>;
+
+using Poses2D = AlignedVector<Pose2D>;
+using Poses3D = AlignedVector<Pose3D>;
+
+template<typename Type, int Dimension>
+std::ostream& operator<<(std::ostream& o, const Pose<Type,Dimension>& p)
+{
+    o << "rotation:\n" << p.rotation.transpose() << "\n";
+    o << "translation: " << p.translation.transpose();
+
+    return o;
+}
