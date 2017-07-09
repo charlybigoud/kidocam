@@ -46,6 +46,8 @@ struct Ray
     )
     : origin(o), direction(d)
     {}
+
+    ~Ray(){};
 };
 
 using Ray2D = Ray<double,2>;

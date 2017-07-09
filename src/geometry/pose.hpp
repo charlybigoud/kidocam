@@ -15,6 +15,8 @@ struct Pose
     )
     : rotation(r), translation(t)
     {}
+
+    ~Pose(){};
 };
 
 using Pose2D = Pose<double,2>;
