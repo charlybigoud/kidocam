@@ -3,7 +3,7 @@
 #include <iostream>
 #include <vector>
 
-#include <eigen3/Eigen/Dense>
+#include <Eigen/Dense>
 
 #include <utils/types.hpp>
 
