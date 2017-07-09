@@ -7,6 +7,7 @@ include_directories(${EIGEN3_INCLUDE_DIR})
 add_library(kidocam
     models/thin_lens.cpp
     models/kidoca.cpp
+    geometry/mesh.cpp
     geometry/point.cpp
     geometry/pose.cpp
     geometry/ray.cpp

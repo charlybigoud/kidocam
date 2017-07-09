@@ -1,5 +1,6 @@
 #include <iostream>
 
+#include <geometry/mesh.hpp>
 #include <geometry/pose.hpp>
 #include <models/kidoca.hpp>
 
@@ -25,6 +26,12 @@ int main()
     Kidoca kidoca;
     kidoca.raytrace(p2d, ray3d);
     kidoca.project(p3d, p2d);
+
+    PolygonMesh2D mesh2d(Orthogonal);
+    std::cout << "mesh2d:\n" << mesh2d << std::endl;
+
+    PolygonMesh3D mesh3d;
+    std::cout << "mesh3d:\n" << mesh3d << std::endl;
 
     return 0;
 }
