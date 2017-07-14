@@ -1,5 +1,4 @@
 #include "thin_lens.hpp"
-#include "thin_lens.hpp"
 
 std::ostream& operator<<(std::ostream& os, const ThinLensModel& tlm)
 {
