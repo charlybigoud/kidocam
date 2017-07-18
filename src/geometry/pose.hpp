@@ -4,14 +4,14 @@
 
 #include <utils/types.hpp>
 
-template<typename Type, int Dimension>
+template<int Dimension>
 struct Pose
 {
-    Eigen::Matrix<Type,Dimension,Dimension> rotation;
-    Eigen::Matrix<Type,Dimension,1> translation;
+    Eigen::Matrix<double, Dimension, Dimension> rotation;
+    Eigen::Matrix<double, Dimension, 1> translation;
 
-    Pose(const Eigen::Matrix<Type,Dimension,Dimension>& r = Eigen::Matrix<Type,Dimension,Dimension>::Identity()
-      , const Eigen::Matrix<Type,Dimension,1>& t = Eigen::Matrix<Type,Dimension,1>::Zero()
+    Pose(const Eigen::Matrix<double, Dimension, Dimension>& r = Eigen::Matrix<double, Dimension, Dimension>::Identity()
+       , const Eigen::Matrix<double, Dimension, 1>& t = Eigen::Matrix<double, Dimension,1>::Zero()
     )
     : rotation(r), translation(t)
     {}
@@ -19,14 +19,14 @@ struct Pose
     ~Pose(){};
 };
 
-using Pose2D = Pose<double,2>;
-using Pose3D = Pose<double,3>;
+using Pose2D = Pose<2>;
+using Pose3D = Pose<3>;
 
 using Poses2D = AlignedVector<Pose2D>;
 using Poses3D = AlignedVector<Pose3D>;
 
-template<typename Type, int Dimension>
-std::ostream& operator<<(std::ostream& os, const Pose<Type,Dimension>& p)
+template<int Dimension>
+std::ostream& operator<<(std::ostream& os, const Pose<Dimension>& p)
 {
     os << "rotation:\n" << p.rotation.transpose() << "\n";
     os << "translation: " << p.translation.transpose();
