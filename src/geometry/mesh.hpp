@@ -46,7 +46,7 @@ struct PolygonMesh
     Eigen::Matrix<double,Dimension,1> vertex(const int col, const int row) const;
     // Eigen::Matrix<double,Dimension,1> vertex(const int i) const;
 
-    //return edge paramters linking two nodes (note by indices)
+    // return edge parameters linking two nodes (note by indices)
     // edge(const int i1, const int i2) const;
 };
 
@@ -65,7 +65,7 @@ Eigen::Matrix<double,Dimension,1> PolygonMesh<Dimension>::vertex(const int col, 
 
     if (geometry == Triangular)
     {
-
+        std::cerr << "Error: PolygonMesh::vertex: Not implemented." << std::endl;
         if (orientation == Horizontal)
         {
             return p;
@@ -75,13 +75,13 @@ Eigen::Matrix<double,Dimension,1> PolygonMesh<Dimension>::vertex(const int col, 
             return p;
         }
         else
-            std::cerr << "Error: PolygonMesh<Dimension>::vertex: wrong orientation value (" << orientation << ")."<< std::endl;
+            std::cerr << "Error: PolygonMesh::vertex: wrong orientation value (" << orientation << ")."<< std::endl;
 
     }
     else if (geometry == Orthogonal)
     {
-        p.x() = edge_length * ( double(col) + double(row));
-        p.y() = edge_length * ( double(row) + double(col));
+        p.x() = edge_length * (double(col) + double(row));
+        p.y() = edge_length * (double(row) + double(col));
     }
     else if (geometry == Hexagonal)
     {
@@ -108,10 +108,10 @@ Eigen::Matrix<double,Dimension,1> PolygonMesh<Dimension>::vertex(const int col, 
             return p;
         }
         else
-            std::cerr << "Error: PolygonMesh<Dimension>::vertex: wrong orientation value (" << orientation << ")."<< std::endl;
+            std::cerr << "Error: PolygonMesh::vertex: wrong orientation value (" << orientation << ")."<< std::endl;
     }    
     else
-        std::cerr << "Error: PolygonMesh<Dimension>::vertex: wrong geometry value (" << geometry << ")."<< std::endl;
+        std::cerr << "Error: PolygonMesh::vertex: wrong geometry value (" << geometry << ")."<< std::endl;
 
     return {};
 }
@@ -124,5 +124,5 @@ std::ostream& operator<<(std::ostream& os, const PolygonMesh<Dimension>& m)
     os << "dimensions: [" << m.dimensions[0] << ", " << m.dimensions[1] << "]\n"; 
     os << "edges length: " << m.edge_length;
 
-    return os;   
+    return os;
 }
