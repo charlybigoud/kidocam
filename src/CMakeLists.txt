@@ -5,6 +5,7 @@ find_package(Eigen3 REQUIRED)
 include_directories(${EIGEN3_INCLUDE_DIR})
 
 add_library(kidocam
+    geometry/camera_models/pinhole.cpp
     geometry/camera_models/thin_lens.cpp
     geometry/camera_models/kidoca.cpp
     geometry/mesh.cpp

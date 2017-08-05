@@ -3,6 +3,7 @@
 #include <geometry/mesh.hpp>
 #include <geometry/pose.hpp>
 #include <geometry/camera_models/thin_lens.hpp>
+#include <geometry/camera_models/pinhole.hpp>
 #include <geometry/camera_models/kidoca.hpp>
 
 int main()
@@ -37,13 +38,19 @@ int main()
     ThinLensModel tlm(10.);
     std::cout << "tlm:\n" << tlm << std::endl;
 
-    p3d = {20.0,20.0,20.0};
+    p3d = {20.0, 20.0, 20.0};
     tlm.project(p3d, p3d);
     std::cout << "p3d:\n" << p3d << std::endl;
 
-    p2d = {2000.0,54118814.0};
+    p2d = {2000.0, 54118814.0};
     tlm.project(p2d, p2d);
     std::cout << "p2d:\n" << p2d << std::endl;
+
+    PinholeModel pm(100.0, 100.0, 400.0, 300.0);
+    std::cout << "pm: " << pm << std::endl;
+
+    pm.project(p3d, ray3d);
+    std::cout << "ray3d:\n" << ray3d << std::endl;
 
     return 0;
 }
