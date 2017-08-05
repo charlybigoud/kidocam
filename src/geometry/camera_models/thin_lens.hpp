@@ -7,12 +7,8 @@
 struct ThinLensModel
 {
     double focal; // The focal length (mm)
-    double diameter; // Diameter of the lens (mm)
 
-
-    ThinLensModel(const double f = 0.0,
-                  const double d = 0.0
-                 );
+    ThinLensModel(const double f = 0.0);
 
     ~ThinLensModel();
 
@@ -27,7 +23,7 @@ std::ostream& operator<<(std::ostream& os, const ThinLensModel& tlm);
 template<int Dimension>
 bool ThinLensModel::project(const Eigen::Matrix<double, Dimension, 1>& p_in,
                                   Eigen::Matrix<double, Dimension, 1>& p_out
-                          ) const
+                           ) const
 {
     //verifying if the point if well located
     if (p_in(Dimension - 1) == 0.0)

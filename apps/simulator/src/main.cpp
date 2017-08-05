@@ -34,7 +34,7 @@ int main()
     PolygonMesh3D mesh3d;
     std::cout << "mesh3d:\n" << mesh3d << std::endl;
 
-    ThinLensModel tlm(10.,4.);
+    ThinLensModel tlm(10.);
     std::cout << "tlm:\n" << tlm << std::endl;
 
     p3d = {20.0,20.0,20.0};
