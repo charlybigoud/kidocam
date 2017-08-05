@@ -2,8 +2,8 @@
 
 #include <geometry/mesh.hpp>
 #include <geometry/pose.hpp>
-#include <models/thin_lens.hpp>
-#include <models/kidoca.hpp>
+#include <geometry/camera_models/thin_lens.hpp>
+#include <geometry/camera_models/kidoca.hpp>
 
 int main()
 {
