@@ -44,10 +44,6 @@ int main()
     tlm.project(p3d, p3d);
     std::cout << "p3d:\n" << p3d << std::endl;
 
-    p2d = {2000.0, 54118814.0};
-    tlm.project(p2d, p2d);
-    std::cout << "p2d:\n" << p2d << std::endl;
-
     PinholeModel pm(100.0, 100.0, 400.0, 300.0);
     std::cout << "pm: " << pm << std::endl;
 
