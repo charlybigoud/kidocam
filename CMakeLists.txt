@@ -8,4 +8,6 @@ add_definitions(-std=c++1y -O3)
 
 add_subdirectory(src)
 
+add_subdirectory(third_party/pangolin)
+
 add_subdirectory(apps/simulator)

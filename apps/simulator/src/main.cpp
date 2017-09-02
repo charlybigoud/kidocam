@@ -6,6 +6,8 @@
 #include <geometry/camera_models/pinhole.hpp>
 #include <geometry/camera_models/kidoca.hpp>
 
+#include <pangolin/pangolin.h>
+
 int main()
 {
     P3D p3d(0.0,0.0,0.0);
