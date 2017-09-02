@@ -20,5 +20,5 @@ struct ThinLensModel
     bool project(const P3D& p_in, P3D& p_out) const;
 };
 
-// Display inner property of a ThinLensModel
+// Display inner properties of a ThinLensModel
 std::ostream& operator<<(std::ostream& os, const ThinLensModel& tlm);
