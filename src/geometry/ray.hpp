@@ -50,8 +50,8 @@ struct Ray
     ~Ray(){};
 };
 
-using Ray2D = Ray<double,2>;
-using Ray3D = Ray<double,3>;
+using Ray2D = Ray<double, 2>;
+using Ray3D = Ray<double, 3>;
 
 using Rays2D = AlignedVector<Ray2D>;
 using Rays3D = AlignedVector<Ray3D>;
