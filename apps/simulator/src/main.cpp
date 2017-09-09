@@ -47,7 +47,11 @@ int main()
     PinholeModel pm(100.0, 100.0, 400.0, 300.0);
     std::cout << "pm: " << pm << std::endl;
 
-    pm.project(p3d, ray3d);
+    pm.project(p3d, p2d);
+    std::cout << "p2d:\n" << p2d << std::endl;
+
+    p2d = {0.5, 0.5};
+    pm.raytrace(p2d, ray3d);
     std::cout << "ray3d:\n" << ray3d << std::endl;
 
     return 0;
