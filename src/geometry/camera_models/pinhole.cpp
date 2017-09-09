@@ -12,7 +12,7 @@ PinholeModel::PinholeModel(const double fu,
 // Destructor
 PinholeModel::~PinholeModel(){}
 
-// Project a point according to the pinhole model
+// Project a point according to the pinhole model (indirect model)
 // p3d is expressed in the lens coordinate system
 bool PinholeModel::project(const P3D& p3d, P2D& pixel) const
 {
@@ -22,7 +22,14 @@ bool PinholeModel::project(const P3D& p3d, P2D& pixel) const
     return true;
 }
 
+// Raytrace a pixel to an unitary ray
+bool PinholeModel::raytrace(const P2D& pixel, Ray3D& ray) const
 {
+    ray.origin = {0.0, 0.0, 0.0};
+
+    ray.direction[0] = (pixel[0] - center[0]) / focal[0];
+    ray.direction[1] = (pixel[1] - center[1]) / focal[1];
+    ray.direction[2] = 1.0;
 
     return true;
 }
