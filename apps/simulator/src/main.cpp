@@ -4,7 +4,7 @@
 #include <geometry/pose.hpp>
 #include <geometry/camera_models/thin_lens.hpp>
 #include <geometry/camera_models/pinhole.hpp>
-#include <geometry/camera_models/kidoca.hpp>
+#include <geometry/camera_models/kitchen_door.hpp>
 
 #include <pangolin/pangolin.h>
 
@@ -27,9 +27,9 @@ int main()
     Pose3D pose3d;
     std::cout << "pose3d:\n" << pose3d << std::endl;
 
-    Kidoca kidoca;
-    kidoca.raytrace(p2d, ray3d);
-    kidoca.project(p3d, p2d);
+    KitchenDoor kitchen_door;
+    kitchen_door.raytrace(p2d, ray3d);
+    kitchen_door.project(p3d, p2d);
 
     PolygonMesh2D mesh2d(Orthogonal);
     std::cout << "mesh2d:\n" << mesh2d << std::endl;

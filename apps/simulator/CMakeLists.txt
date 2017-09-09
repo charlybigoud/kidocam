@@ -11,7 +11,7 @@ include_directories(${Pangolin_INCLUDE_DIRS})
 add_executable(simulator src/main.cpp)
 
 target_link_libraries(simulator
-kidocam
+kitchen_door
 ${EIGEN_LIBRAIRIES}
 ${Pangolin_LIBRARIES}
 )
