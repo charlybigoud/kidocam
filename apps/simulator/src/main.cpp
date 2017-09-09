@@ -6,7 +6,7 @@
 #include <geometry/camera_models/pinhole.hpp>
 #include <geometry/camera_models/kitchen_door.hpp>
 
-#include <pangolin/pangolin.h>
+//#include <pangolin/pangolin.h>
 
 int main()
 {

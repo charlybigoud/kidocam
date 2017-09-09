@@ -1,3 +1,0 @@
-[submodule "third_party/pangolin"]
-	path = third_party/pangolin
-	url = git@github.com:stevenlovegrove/Pangolin.git

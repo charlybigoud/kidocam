@@ -35,7 +35,7 @@ install:
   # eigen3
   - sudo apt-get -qq install libeigen3-dev
   # glew
-  - sudo apt-get -qq install libglew-dev
+  #- sudo apt-get -qq install libglew-dev
 
 before_script:
   - mkdir build
