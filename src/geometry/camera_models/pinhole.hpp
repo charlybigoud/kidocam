@@ -13,8 +13,7 @@ struct PinholeModel{
     PinholeModel(const double fu = 0.0,
                  const double fv = 0.0,
                  const double u0 = 0.0,
-                 const double v0 = 0.0
-                );
+                 const double v0 = 0.0);
 
     // Destructor
     ~PinholeModel();

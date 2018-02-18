@@ -4,9 +4,8 @@
 PinholeModel::PinholeModel(const double fu,
                            const double fv,
                            const double u0,
-                           const double v0
-                          )
-: focal({fu,fv}), center({u0,v0})
+                           const double v0)
+: focal({fu, fv}), center({u0, v0})
 {}
 
 // Destructor
